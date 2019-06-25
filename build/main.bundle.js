@@ -1,17 +1,2 @@
-'use strict';
-
-var calculateMonthlyPayment = function calculateMonthlyPayment(principal, years, rate) {
-    if (rate) {
-        var monthlyRate = rate / 100 / 12;
-    }
-    var monthlyPayment = principal * monthlyRate / (1 - Math.pow(1 / (1 + monthlyRate), years * 12));
-    return monthlyPayment;
-};
-
-document.getElementById('calcBtn').addEventListener('click', function () {
-    var principal = document.getElementById("principal").value;
-    var years = document.getElementById("years").value;
-    var rate = document.getElementById("rate").value;
-    var monthlyPayment = calculateMonthlyPayment(principal, years, rate);
-    document.getElementById("monthlyPayment").innerHTML = monthlyPayment.toFixed(2);
-});
+!function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";n.r(t);let r=(e,t,n)=>{let{monthlyRate:r,monthlyPayment:o}=((e,t,n)=>{let r=0;return n&&(r=n/100/12),{principal:e,years:t,rate:n,monthlyPayment:e*r/(1-Math.pow(1/(1+r),12*t)),monthlyRate:r}})(e,t,n),l=e,a=[];for(let e=0;e<t;e++){let e=0,t=0;for(let n=0;n<12;n++){let n=l*r,a=o-n;e+=n,t+=a,l-=a}a.push({principalY:t,interestY:e,balance:l})}return{monthlyPayment:o,monthlyRate:r,amortization:a}};document.getElementById("calcBtn").addEventListener("click",()=>{let e=document.getElementById("principal").value,t=document.getElementById("years").value,n=document.getElementById("rate").value,{monthlyPayment:o,monthlyRate:l,amortization:a}=r(e,t,n);document.getElementById("monthlyPayment").innerHTML=o.toFixed(2),document.getElementById("monthlyRate").innerHTML=(100*l).toFixed(2),a.forEach(e=>console.log(e))})}]);
+//# sourceMappingURL=main.bundle.js.map
